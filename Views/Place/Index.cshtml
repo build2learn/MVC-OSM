@@ -1,0 +1,51 @@
+﻿@model IEnumerable<MVC_OSM.Models.PlaceClass>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.placname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.plactype)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.placaddress)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.created_on)
+        </th>*@
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.placname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.plactype)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.placaddress)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.created_on)
+        </td>*@
+        <td>
+            <button type="button" class="btn btn-dark">@Html.ActionLink("Edit", "Edit", new { id = item.placeid }) </button>
+            <button type="button" class="btn btn-dark">@Html.ActionLink("Details", "Details", new { id = item.placeid }) </button>
+            <button type="button" class="btn btn-dark">@Html.ActionLink("Delete", "Delete", new { id = item.placeid }) </button>
+</td>
+    </tr>
+}
+
+</table>
