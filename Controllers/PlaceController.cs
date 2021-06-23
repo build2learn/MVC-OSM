@@ -46,7 +46,7 @@ namespace MVC_OSM.Controllers
         // GET: Place/Create
         public ActionResult Create()
         {
-            _logger.Info("Successfuly We added the Place ");
+            _logger.Info("Successfuly We view the places ");
 
             return View();
         }
